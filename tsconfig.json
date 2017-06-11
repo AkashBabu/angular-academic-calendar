@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "outDir": "./dist/ts/",
+        "allowJs": true,
+        "allowUnreachableCode": true
+    },
+    "files": [
+        "./typings/index.d.ts",
+        // "./demo/app.ts",
+        "./src/calendar/calendar.directive.ts"
+    ]
+}

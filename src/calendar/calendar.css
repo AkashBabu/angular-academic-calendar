@@ -1,0 +1,109 @@
+    .calendar-app {
+        padding: 1em;
+    }
+    
+    .calendar {
+        border-radius: 0.5em;
+    }
+    
+    .calendar .heading {
+        color: white;
+        background-color: blue;
+        padding: 0.75em;
+        font-size: 120%;
+        font-weight: bold;
+        display: flex;
+        align-content: center;
+        justify-content: space-between
+    }
+    
+    .calendar .heading .prev:hover,
+    .calendar .heading .next:hover {
+        cursor: pointer;
+    }
+    
+    .calendar .dates {
+        text-align: center;
+        border: 1px solid gray;
+        display: flex;
+        flex-flow: row wrap;
+        border-radius: 0 0 1em 1em;
+    }
+    
+    .calendar .dates .week-heading {
+        color: gray;
+        font-weight: bold;
+        font-size: 110%;
+    }
+    
+    .calendar .dates .date-block {
+        padding: 0.3em 0.7em;
+        display: inline-block;
+        width: 14.285%;
+        height: 3em;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    .calendar .dates .date-block .date:hover {
+        cursor: pointer;
+        background-color: rgba(50, 30, 50, 0.2);
+        color: white;
+        font-size: 160%;
+    }
+    
+    .calendar .dates .date-block .date {
+        border-radius: 50%;
+        padding: 0.5em;
+        font-weight: bolder;
+        font-size: 130%;
+        transition: font-size ease-out 0.2s;
+    }
+    
+    .calendar .dates .date-block .date.event {
+        background-color: rgba(0, 100, 255, 0.2);
+    }
+    
+    .calendar .dates .date-block .date.text-muted {
+        color: gray;
+        font-size: 100%;
+    }
+    
+    .calendar-app .events {
+        transition: all linear 0.5s;
+        text-align: center;
+        height: 0;
+        margin-top: 0.5em;
+    }
+    
+    .calendar-app .events .event-heading {
+        font-size: 120%;
+        color: #0000ad;
+        font-weight: bolder;
+        padding: 0.1em;
+        display: flex;
+        justify-content: space-between;
+        align-content: space-between;
+    }
+    
+    .calendar-app .events .events-table>thead>tr,
+    .calendar-app .events .events-table>tbody>tr {
+        text-align: left;
+    }
+    
+    .calendar-app .events .events-table>tbody>tr:hover {
+        cursor: pointer;
+    }
+    
+    .calendar-app .events .remove-event {
+        color: red;
+    }
+    
+    .calendar-app .events .remove-event:hover {
+        cursor: pointer;
+    }
+    
+    .calendar-form .form-group,
+    .calendar-form .input-group {
+        margin: 0.5em;
+    }

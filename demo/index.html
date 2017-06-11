@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
+</head>
+
+<body ng-app="calendarApp">
+    <calendar calendar-id="calendar._id" start-of-academic-year="calendar.startOfAcademicYear" academic-year="calendar.academicYear" days-containing-events="vm.daysContainingEvents(id)" event-source="vm.getEvents(date, id)" on-remove-event="vm.removeEvent(date, event, id)"
+        on-update-event="vm.updateEvent(date, event, id)" on-save-event="vm.saveEvent(date, event, id)"></calendar>
+
+    <script type='application/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script type='application/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js'></script>
+    <script type='application/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js'></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+{
+    "name": "angular-academic-calendar",
+    "version": "0.0.1",
+    "description": "Angularjs 1.x bootstrap calendar for Event scheduling and Viewing",
+    "main": "src/calendar/calendar.directive",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack --config webpack.config.js",
+        "build-prod": "webpack --config webpack-prod.config.js -p"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AkashBabu/angularjs-bootstrap-calendar.git"
+    },
+    "keywords": [
+        "Angularjs",
+        "angular1.x",
+        "bootstrap",
+        "calendar",
+        "events",
+        "scheduling"
+    ],
+    "author": "Akash Babu",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/AkashBabu/angularjs-bootstrap-calendar/issues"
+    },
+    "homepage": "https://github.com/AkashBabu/angularjs-bootstrap-calendar#readme",
+    "dependencies": {
+        "@types/angular": "^1.6.18",
+        "@types/jquery": "^2.0.46",
+        "@types/node": "^7.0.27",
+        "angular": "^1.6.4",
+        "bootstrap": "^3.3.7",
+        "bootstrap-timepicker": "^0.5.2",
+        "jquery": "^3.2.1",
+        "moment": "^2.18.1"
+    },
+    "devDependencies": {
+        "@types/angular-mocks": "^1.5.9",
+        "@types/moment": "^2.13.0",
+        "angular-mock": "^1.0.0",
+        "angular-mocks": "^1.6.4",
+        "autoprefixer-loader": "^3.2.0",
+        "awesome-typescript-loader": "^3.1.3",
+        "babel-core": "^6.24.1",
+        "babel-loader": "^7.0.0",
+        "babel-preset-es2015": "^6.24.1",
+        "css-loader": "^0.28.4",
+        "extract-text-webpack-plugin": "^2.1.0",
+        "file-loader": "^0.11.1",
+        "html-loader": "^0.4.5",
+        "imports-loader": "^0.7.1",
+        "jshint": "^2.9.4",
+        "jshint-loader": "^0.8.4",
+        "style-loader": "^0.18.1",
+        "ts-loader": "^2.1.0",
+        "typescript": "^2.3.4",
+        "url-loader": "^0.5.8",
+        "webpack": "^2.6.1",
+        "webpack-dev-server": "^2.4.5"
+    }
+}

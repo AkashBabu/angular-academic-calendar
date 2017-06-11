@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="" href="/public/demo.css">
+</head>
+
+<body ng-app="app" ng-controller="testCtrl as vm">
+
+    <calendar calendar-id="calendarId" enable-add-events="true" enable-edit-events="true" enable-del-events="true" start-of-academic-year="'Feb'" academic-year="'2016-2017'" day-label-format="l" on-date-select="vm.onDateSelect(date, id)" on-month-change="vm.monthChanged(month, id)"
+        days-containing-events="vm.daysContainingEvents(id)" event-source="vm.getEvents(date, id)" on-remove-event="vm.removeEvent(date, event, id)" on-update-event="vm.updateEvent(date, event, id)" on-save-event="vm.saveEvent(date, event, id)"></calendar>
+
+    <script type='application/javascript' src='/public/calendar.min.js'></script>
+    <script type='application/javascript' src='/public/demo.js'></script>
+</body>
+
+</html>

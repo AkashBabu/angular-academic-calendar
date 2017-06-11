@@ -1,0 +1,86 @@
+<div class="calendar-app">
+    <div class="calendar">
+        <div class="heading">
+            <span class="prev" ng-click="vm.prevMonth()"><i class="glyphicon glyphicon-chevron-left"></i></span>
+            <span>{{vm.currMonth | ngDate: 'YYYY/MM':'MMM YYYY'}} ({{vm.academicYear}})</span>
+            <span class="next" ng-click="vm.nextMonth()"><i class="glyphicon glyphicon-chevron-right"></i></span>
+        </div>
+        <div class="dates">
+
+            <!--Week heading-->
+            <div class="date-block" ng-repeat="day in vm.weekDays">
+                <span class="week-heading" ng-bind="vm.getDayLabel(day)"></span>
+            </div>
+
+            <div class="date-block" ng-repeat="date in vm.dates">
+                <span class="date" ng-class="{'text-muted': !vm.isSelectedMonth(date), 'event': vm.isEventsAvailable(date)}" ng-click="vm.dateSelected(date)">{{(date | ngDate: 'D').length > 1 ? (date | ngDate: 'D') : '&nbsp;' + (date | ngDate: 'D') + '&nbsp;'}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="events">
+        <div class="row event-heading">
+            <div>&nbsp;</div>
+            <div>
+                Events - {{vm.selectedDate | ngDate: 'DD MMM YYYY'}}
+            </div>
+            <div ng-if="!vm.enableAddEvents">&nbsp;</div>
+            <button ng-if="vm.enableAddEvents" class="btn btn-success btn-sm" ng-click="vm.addEventModal()"><i class="glyphicon glyphicon-plus"></i></button>
+        </div>
+        <table class="table events-table table-hover">
+            <thead>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Session</th>
+                    <th ng-if="vm.enableDelEvents">
+                        &nbsp;
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="event in vm.todaysEvents">
+                    <td ng-click="vm.editEventModal(event, $index)">{{event.fromTime}}</td>
+                    <td ng-click="vm.editEventModal(event, $index)">{{event.toTime}}</td>
+                    <td ng-click="vm.editEventModal(event, $index)">{{event.description}}</td>
+                    <td ng-if="vm.enableDelEvents">
+                        <span class="remove-event">
+                            <i class="glyphicon glyphicon-trash  pull-right" ng-click="vm.removeEvent($index)"></i>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="modal fade" id="{{vm.calendarEventModalId}}" tabindex="-1" role="dialog" aria-labelledby="Event Modal">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" ng-if="vm.addEvent">Add Event</h4>
+                <h4 class="modal-title" ng-if="!vm.addEvent">Edit Event</h4>
+            </div>
+            <div class="modal-body">
+                <form class="calendar-form" role="form">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="{{vm.eventFromTimeId}}" ng-model="vm.modalEvent.fromTime" placeholder="Event Start Time">
+                        <span class="input-group-addon"><i class=" glyphicon glyphicon-time"></i></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="{{vm.eventToTimeId}}" ng-model="vm.modalEvent.toTime" placeholder="Event End Time">
+                        <span class="input-group-addon"><i class=" glyphicon glyphicon-time"></i></span>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="3" class="form-control" ng-model="vm.modalEvent.description" placeholder="Event Description"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" ng-if="vm.addEvent" ng-click="vm.saveEvent()">Save</button>
+                <button type="button" class="btn btn-primary" ng-if="!vm.addEvent" ng-click="vm.updateEvent()">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

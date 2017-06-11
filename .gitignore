@@ -1,0 +1,7 @@
+node_modules/
+typings/
+*.woff2
+*.svg
+*.ttf
+*.woff
+*.eot

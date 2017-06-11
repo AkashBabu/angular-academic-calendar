@@ -1,0 +1,11 @@
+Dates should scroll on overflow 
+Min Width for dates container
+
+
+Year management
+Shift of schedules for the new Year
+
+view events
+edit events
+add events
+delete events
